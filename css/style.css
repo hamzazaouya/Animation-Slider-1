@@ -118,11 +118,15 @@ label {
     z-index: 10;
 }
 
-label:nth-of-type(2) {
+#check1 {
+    left: 60%;
+}
+
+#check2 {
     left: 67%;
 }
 
-label:nth-of-type(3) {
+#check3 {
     left: 74%;
 }
 
@@ -135,10 +139,15 @@ label span {
     top: 0;
     background-image: linear-gradient(135deg, #ff9500, #fc4e00);
     transform: translateX(-100%);
-    transition: .3s
+    transition: .3s;
+    transition-delay: .1s;
 }
 
 label:hover span {
+    transform: translateX(0)
+}
+
+#check1 span{
     transform: translateX(0)
 }
 
@@ -151,3 +160,10 @@ label:hover span {
 #check3:hover ~ .box1{
     opacity: 0;
 }
+
+#check2:hover ~ #check1 span,
+#check3:hover ~ #check1 span {
+    transform: translateX(-100%)
+}
+
+
