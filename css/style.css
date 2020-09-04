@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.slider {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(135deg, #ff9500, #fc4e00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    height: 350px;
+    width: 70%;
+    background-color: #FFF;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 30px  rgba(0, 0, 0, .4),
+                -10px -10px 30px rgba(255, 255, 225, .5);
+    padding: 3rem 2rem;
+}
+
+.box {
+    position: absolute;
+    left: 2rem;
+    top: 3rem;
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+    transition: 1s;
+}
+
+.box:nth-of-type(2) {
+    opacity: 0;
+}
+
+.box:nth-of-type(3) {
+    opacity: 0;
+}
+
+.img {
+    width: 90%;
+    height: 80%;
+    border-radius: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+.content p:first-of-type {
+    text-transform: capitalize;
+    color: #808284;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.content h1 {
+    margin: 1rem 0;
+    text-transform: capitalize;
+}
+
+.content p:last-of-type {
+    color: #808284;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.content button {
+    color: #FFF;
+    background: none;
+    border:none;
+    height: 3rem;
+    width: 9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    background-image: linear-gradient(135deg, #ff9500, #fc4e00);
+    outline: none;
+    cursor: pointer;
+    
+}
+
+input {
+    position: absolute;
+    bottom: 0%;
+}
+
+label {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    left: 60%;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 3rem;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 10;
+}
+
+label:nth-of-type(2) {
+    left: 67%;
+}
+
+label:nth-of-type(3) {
+    left: 74%;
+}
+
+label span {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(135deg, #ff9500, #fc4e00);
+    transform: translateX(-100%);
+    transition: .3s
+}
+
+label:hover span {
+    transform: translateX(0)
+}
+
+#check2:hover ~ .box2,
+#check3:hover ~ .box3{
+    opacity: 1;
+}
+
+#check2:hover ~ .box1,
+#check3:hover ~ .box1{
+    opacity: 0;
+}
